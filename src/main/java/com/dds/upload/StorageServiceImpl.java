@@ -38,6 +38,7 @@ public class StorageServiceImpl implements StorageService {
 	@Autowired
 	public StorageServiceImpl(StorageProperties storageProperties) {
 		this.rootPath = Paths.get(storageProperties.getLocation());
+		this.init();
 	}
 
 	@Override
@@ -52,18 +53,23 @@ public class StorageServiceImpl implements StorageService {
 	@Override
 	public void store(MultipartFile file) {
 		String fileName = org.springframework.util.StringUtils.cleanPath(file.getOriginalFilename());
+		System.out.println("1." + fileName);
 		if (file.isEmpty()) {
 			throw new RuntimeException("File is empty");
 		}
 		if (StringUtils.isEmpty(fileName)) {
-			throw new RuntimeException("File is empty");
+			throw new RuntimeException("Filename is empty");
 		}
+		System.out.println("2." + fileName);
 		InputStream in = null;
 		try {
 			in = file.getInputStream();
-			Files.copy(file.getInputStream(), rootPath.resolve(fileName), StandardCopyOption.REPLACE_EXISTING);
+			Files.copy(in, this.rootPath.resolve("4.png"), StandardCopyOption.REPLACE_EXISTING);
+			System.out.println("3." + fileName);
 		} catch (IOException e) {
-			throw new RuntimeException("Failed to store");
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			if (in != null) {
 				try {
@@ -81,8 +87,12 @@ public class StorageServiceImpl implements StorageService {
 		try {
 			return Files.walk(this.rootPath, 1).filter(p -> !p.equals(this.rootPath)).map(this.rootPath::relativize);
 		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("AAAA:" + e.getMessage());
 			throw new RuntimeException("File not found");
 		}
+		// return new Stream<Path>();
+
 	}
 
 	@Override

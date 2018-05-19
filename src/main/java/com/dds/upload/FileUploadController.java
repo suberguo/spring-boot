@@ -26,6 +26,7 @@ public class FileUploadController {
 	@Autowired
 	public FileUploadController(StorageService storageService) {
 		this.storageService = storageService;
+
 	}
 
 	@GetMapping("/")
@@ -36,10 +37,10 @@ public class FileUploadController {
 								.fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
 								.build().toString())
 						.collect(Collectors.toList()));
-		return "uploadForm";
+		return "upload";
 	}
 
-	@GetMapping("/files/{filename:.+}")
+	@GetMapping("/files/{fileName}")
 	@ResponseBody
 	public ResponseEntity<Resource> serveFile(@PathVariable String fileName) throws StorageFileNotFoundException {
 		Resource resource = storageService.loadAsResource(fileName);
@@ -49,10 +50,11 @@ public class FileUploadController {
 	}
 
 	@PostMapping
-	public String handleFileUpload(@RequestParam MultipartFile files, RedirectAttributes redirectAttributes) throws Exception {
-		storageService.store(files);
+	public String handleFileUpload(@RequestParam MultipartFile file, RedirectAttributes redirectAttributes)
+			throws Exception {
+		storageService.store(file);
 		redirectAttributes.addFlashAttribute("message",
-				"\"You successfully uploaded \" + file.getOriginalFilename() + \"!\"");
+				"You successfully uploaded " + file.getOriginalFilename() + "!");
 		return "redirect:/";
 	}
 
