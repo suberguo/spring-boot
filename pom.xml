@@ -19,5 +19,7 @@
 		<module>02.spring-boot-consumer</module>
 		<module>03.spring-boot-upload</module>
 		<module>04.spring-boot-validatingform</module>
+
+		<module>05.spring-boot-jdbc</module>
 	</modules>
 </project>
