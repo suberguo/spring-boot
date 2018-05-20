@@ -17,5 +17,6 @@
 	<modules>
 		<module>01.spring-boot-restfulservice</module>
 		<module>02.spring-boot-consumer</module>
+		<module>03.spring-boot-upload</module>
 	</modules>
 </project>
