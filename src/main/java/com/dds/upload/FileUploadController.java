@@ -29,7 +29,7 @@ public class FileUploadController {
 
 	}
 
-	@GetMapping("/")
+	@GetMapping("/upload")
 	public String listUploadedFiles(Model model) {
 		model.addAttribute("files",
 				storageService.loadAll()

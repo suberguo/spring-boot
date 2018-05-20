@@ -1,5 +1,7 @@
 package com.dds.validatingform;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +17,13 @@ public class PersonController implements WebMvcConfigurer {
 		registry.addViewController("/results").setViewName("results");
 	}
 
-	@GetMapping("/")
+	@GetMapping("/personform")
 	public String showForm(PersonVO person) {
 		return "personForm";
 	}
 
-	@PostMapping("/")
-	public String checkPerson(PersonVO person, BindingResult result) {
+	@PostMapping("/personform")
+	public String checkPerson(@Valid PersonVO person, BindingResult result) {
 		if (result.hasErrors()) {
 			return "personForm";
 		}
