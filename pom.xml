@@ -21,5 +21,7 @@
 		<module>04.spring-boot-validatingform</module>
 
 		<module>05.spring-boot-jdbc</module>
+		<module>06.spring-boot-transactions</module>
+		<module>07.spring-boot-securing</module>
 	</modules>
 </project>
