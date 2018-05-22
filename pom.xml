@@ -23,5 +23,6 @@
 		<module>05.spring-boot-jdbc</module>
 		<module>06.spring-boot-transactions</module>
 		<module>07.spring-boot-securing</module>
+		<module>08.spring-boot-ldap</module>
 	</modules>
 </project>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+</head>
+<body>
+	<div>
+		Welcome to DDS,<span th:text="${username}"></span>
+		<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+	</div>
+	<form method="POST" th:action="@{/logout}">
+		<input type="submit" value="Sign out" />
+	</form>
+</body>
+</html>
