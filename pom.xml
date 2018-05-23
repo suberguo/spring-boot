@@ -24,5 +24,6 @@
 		<module>08.spring-boot-ldap</module>
     <module>09.spring-boot-configuration</module>
     <module>10.spring-boot-batchservice</module>
+    <module>11.spring-boot-jquery</module>
   </modules>
 </project>
