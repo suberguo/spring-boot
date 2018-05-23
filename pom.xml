@@ -23,5 +23,6 @@
 		<module>07.spring-boot-securing</module>
 		<module>08.spring-boot-ldap</module>
     <module>09.spring-boot-configuration</module>
+    <module>10.spring-boot-batchservice</module>
   </modules>
 </project>

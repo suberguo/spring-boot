@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.dds</groupId>
+    <artifactId>spring-boot-sample</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.dds.batchservice</groupId>
+  <artifactId>10.spring-boot-batchservice</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+  <name>10.spring-boot-batchservice</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+     <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-batch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
+  </dependencies>
+  <build>
+    <finalName>10.spring-boot-batchservice</finalName>
+  </build>
+</project>
