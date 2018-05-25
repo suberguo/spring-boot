@@ -25,5 +25,6 @@
     <module>09.spring-boot-configuration</module>
     <module>10.spring-boot-batchservice</module>
     <module>11.spring-boot-jquery</module>
+    <module>12.spring-boot-mustache</module>
   </modules>
 </project>
