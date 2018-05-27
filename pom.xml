@@ -22,9 +22,11 @@
 		<module>06.spring-boot-transactions</module>
 		<module>07.spring-boot-securing</module>
 		<module>08.spring-boot-ldap</module>
-    <module>09.spring-boot-configuration</module>
-    <module>10.spring-boot-batchservice</module>
-    <module>11.spring-boot-jquery</module>
-    <module>12.spring-boot-mustache</module>
+		<module>09.spring-boot-configuration</module>
+		<module>10.spring-boot-batchservice</module>
+		<module>11.spring-boot-jquery</module>
+		<module>12.spring-boot-mustache</module>
+		<module>13.spring-boot-jsp</module>
+    <module>14.spring-boot-securing-database</module>
   </modules>
 </project>
